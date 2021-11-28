@@ -9,11 +9,6 @@ var data = {};
 // fetch data
 readFolder(data, 'blog');
 
-// remove drafts in production
-if(process.env.VERCEL){
-  data.blog = data.blog.filter(x => x.data.draft !== true);
-}
-
 if (!fs.existsSync('./public/article')) {
   fs.mkdirSync('./public/article', 0744);
 }
