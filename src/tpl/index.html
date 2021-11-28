@@ -1,0 +1,196 @@
+<head>
+  <!-- for optimal display on high DPI devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4/dist/photo-sphere-viewer.min.css"/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;600&display=swap" rel="stylesheet"> 
+
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+    body{
+      margin: 0;
+      padding: 0;
+      
+    }
+    .wrap{
+      max-width: 1200px;
+      margin: 0 auto;
+      
+      
+    }
+
+    .cols{
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+    }
+  
+    #viewer{
+      width: 100%; height: 350px;
+      border: 1px solid black;
+    }
+
+    #map{
+
+      border: 1px solid black;
+      background-position: top center;
+      margin-right: 35px;
+    }
+    
+    h1{
+      margin-bottom: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 40px;
+    }
+
+    h2{
+     
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 25px;
+     text-transform: uppercase;
+    }
+
+    .info h2{
+       display: inline-block;
+      color: white;
+  }
+    
+    p{
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 19px;
+      line-height: 32px;
+    }
+
+    .info{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 30px;
+      margin-top: 30px;
+    }
+    
+    .content{
+   
+    margin: 0 auto;
+    margin-top: 30px;
+    }
+
+    .infobox{
+      background-color:#23272A;
+     color: white;
+     padding: 25px;
+     padding-left: 45px;
+     border-left: 5px solid #6F6AE9;
+     line-height: 26px;
+     margin-right: 35px;
+    }
+
+   
+
+    .sources{
+      background-color: #6F6AE9;
+      border-left: 5px solid black;
+      padding-bottom: 35px;
+    }
+
+    .sources a{color: white;}
+
+    nav{
+      background-color: #23272A;
+      padding: 15px 35px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+    }
+    nav a{
+      color: white;
+text-decoration: none;
+    }
+
+    .projects{
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+ 
+    }
+
+    img{
+      max-width: 100%;
+    }
+
+    .intro{
+      max-width: 50%;
+      margin: 0 auto;
+      text-align: center;
+      margin-bottom: 0px;
+      margin-top: 50px;
+    }
+
+    #line-map{
+      margin-top: -120px;
+    }
+  </style>
+  
+</head>
+
+<body>
+<script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uevent@2/browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4/dist/photo-sphere-viewer.min.js"></script>
+
+<!-- the viewer container must have a defined size -->
+
+<nav><a href="/">Langs lijn 24</a></nav>
+
+  <div class="wrap">
+
+
+    
+    <div class="content">
+
+      <div class="intro">
+
+        <h2>Langs Lijn 24</h2>
+
+        <p>Lijn 24 is een goederenspoorlijn even ten zuiden van Nederlands Limburg.
+          De lijn werd in 1915 aangelegd door de Duitse bezetter voor het vervoer van oorlogsmaterieel.
+          <!-- Lijn 24 is tot op de dag van vandaag de belangrijkste goederenspoorlijn tussen de haven van Antwerpen en het Duitse Ruhrgebiet, 
+          maar heeft een even zo rijke historie. -->
+        </p>
+
+<p><!-- Deze site vertelt het verhaal van Lijn 24 aan de hand van overgebleven architectuur en is daarnaast een persoonlijke, avontuurlijke zoektocht van de auteur door het landschap van zijn jeugd.--></p>
+
+      </div>
+
+      <img src="/img/Lijn-24-short.png" id="line-map" />
+
+      <div class="projects">
+      <a href="/article/montzen-gare/"><img src="/article/montzen-gare/img/header.png" /></a>
+      <a href="/article/schmalgraf-mine/"><img src="/article/schmalgraf-mine/img/header.png" /></a>
+      <a href="/article/viaduct-moresnet/"><img src="/article/viaduct-moresnet/img/header.png" /></a>
+      <a href="/article/wagenwerkplaats/"><img src="/article/wagenwerkplaats/img/header.png" /></a>
+
+    </div>
+
+<br><br><br><br>
+
+<!--
+      <h1>More Projects</h1>
+      <p>
+      {{#each this}}
+      <a href="/article/{{slug}}">{{data.title}}</a><br>
+      {{/each}}
+      </p>
+  -->
+
+   
+</div>
+</div>
+
+
+</body>
