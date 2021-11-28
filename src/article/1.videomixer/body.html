@@ -1,0 +1,73 @@
+<style>
+ 
+
+    .btn:focus,
+    .btn:active {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+
+    div.pip-small {
+      display: none !important;
+    }
+
+    #canvas {
+      width: 720px;
+      height: 135px;
+      border: 1px solid black;
+    }
+
+    #video,
+    #mainscreen {
+      width: 720px;
+      height: 405px;
+    }
+
+    #mainscreen {
+      overflow: hidden;
+      border: 1px solid black;
+      border-bottom: 0;
+    }
+
+    #controls {
+      position: relative;
+    }
+
+    .cam {
+      position: absolute;
+      width: 240px;
+      height: 135px;
+      border-right: 1px solid black;
+      cursor: pointer;
+    }
+
+    #cam2 {
+      margin-left: 240px;
+    }
+
+    #cam3 {
+      margin-left: 480px;
+      border-right: 0;
+    }
+
+    #video {
+      transform: scale(3);
+    }
+  </style>
+
+
+  <div class="wrap">
+    <div id="player">
+      <div id="mainscreen">
+        <video disablePictureInPicture id="video" src="https://videomixer.b-cdn.net/anne-trolle/anne-trolle.mp4" controls="false"></video>
+      </div>
+      <div id="controls">
+        <div class="cam" id="cam1"></div>
+        <div class="cam" id="cam2"></div>
+        <div class="cam" id="cam3"></div>
+        <canvas id="canvas"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="/article/videomixer/assets/videomixer-canvas.js"></script>
