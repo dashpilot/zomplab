@@ -15,7 +15,7 @@ if (!fs.existsSync('./public/article')) {
 
 // console.log(data.blog);
 
-var head = fs.readFileSync('./src/tpl/header.html').toString();
+var head = fs.readFileSync('./src/tpl/header.html').toString().replace('{{title}} - ', '');
 var foot = fs.readFileSync('./src/tpl/footer.html').toString();
 
 var body = `<h1>ZompLab</h1>`;
@@ -40,7 +40,7 @@ data.blog.forEach(function(myitem){
     fs.mkdirSync(dest+'/img', 0744);
   }
 
-  var head = fs.readFileSync('./src/tpl/header.html').toString();
+  var head = fs.readFileSync('./src/tpl/header.html').toString().replace('{{title}}', `${readableTitle(myitem.slug)}`);
   var foot = fs.readFileSync('./src/tpl/footer.html').toString();
   var title = `<h1>${readableTitle(myitem.slug)}</h1>`;
   var page = head + title + myitem.body + foot;
@@ -59,8 +59,6 @@ data.blog.forEach(function(myitem){
   if (fs.existsSync(src+'/assets/')) {
     fse.copySync(src+'/assets/', dest+'/assets/');
   }
- 
- 
 
 })
 
@@ -105,5 +103,15 @@ function readFolder(data, folder){
 function readableTitle(slug){
   let title = slug.replace('-', ' ');
   title = title.split('.')[1];
+  title = ucWords(title);
   return title;
+}
+
+function ucWords(words) {
+  var separateWord = words.toLowerCase().split(' ');
+  for (var i = 0; i < separateWord.length; i++) {
+     separateWord[i] = separateWord[i].charAt(0).toUpperCase() +
+     separateWord[i].substring(1);
+  }
+  return separateWord.join(' ');
 }
