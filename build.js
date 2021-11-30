@@ -61,6 +61,8 @@ data.blog.forEach(function(myitem){
 
   if (fs.existsSync(src+'/assets/')) {
     fse.copySync(src+'/assets/', dest+'/assets/');
+  }else{
+    fs.mkdirSync(dest+'/assets/', 0744);
   }
 
 
