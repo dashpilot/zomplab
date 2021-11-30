@@ -1,0 +1,75 @@
+  #mainscreen {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    border: 1px solid black;
+    border-top: 0;
+    background-image: url(https://img.youtube.com/vi/_3RVP9fcmJI/maxresdefault.jpg);
+    background-size: cover;
+  }
+
+  #mainscreen iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+ 
+  #controls {
+    position: relative;
+    width: 100%;
+    border-top: 0;
+    height: 61px;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    border: 1px solid black;
+    border-top: 0;
+  }
+
+  #video{
+      display: none;
+  }
+
+  #play{
+    text-align: center;
+    height: 60px;
+    padding-top: 19px;
+  }
+
+  #stop{
+
+  }
+
+  #cams{
+      display: none;
+  }
+
+  .cam {
+    width: 25%;
+    height: 60px;
+    border-right: 1px solid black;
+    cursor: pointer;
+    text-align: center;
+    padding-top: 19px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .cam:hover, #play:hover, #stop:hover{
+    background-color: #EEEEEE;
+    cursor: pointer;
+  }
+
+  #cam3 {
+    border-right: 0;
+  }
+
+  .bi{
+      font-size: 25px;
+      padding-top: 0;
+      margin-top: -5px;
+      display: inline-block;
+  }

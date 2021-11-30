@@ -21,6 +21,7 @@
   "homepage": "https://github.com/dashpilot/site-filmkit#readme",
   "dependencies": {
     "fs-extra": "^10.0.0",
+    "javascript-obfuscator": "^3.0.0",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {

@@ -3,6 +3,7 @@ const fetch = require('node-fetch');
 const { builtinModules } = require('module');
 const fse = require('fs-extra');
 const { title } = require('process');
+var JavaScriptObfuscator = require('javascript-obfuscator');
 
 var data = {};
 
@@ -59,6 +60,28 @@ data.blog.forEach(function(myitem){
   if (fs.existsSync(src+'/assets/')) {
     fse.copySync(src+'/assets/', dest+'/assets/');
   }
+
+
+if (fs.existsSync(src+'/js/scripts.js')) {
+// Read the file of your original JavaScript Code as text
+fs.readFile(src+'/js/scripts.js', "UTF-8", function(err, data) {
+    if (err) {
+        throw err;
+    }
+
+    // Obfuscate content of the JS file
+    var obfuscationResult = JavaScriptObfuscator.obfuscate(data);
+    
+    // Write the obfuscated code into a new file
+    fs.writeFile(dest+'/assets/bundle.js', obfuscationResult.getObfuscatedCode() , function(err) {
+        if(err) {
+            return console.log(err);
+        }
+    
+        console.log("The file was saved!");
+    });
+});
+}
 
 })
 
