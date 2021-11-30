@@ -14,6 +14,8 @@ if (!fs.existsSync('./public/article')) {
   fs.mkdirSync('./public/article', 0744);
 }
 
+fse.copySync('./src/tpl/style.css', './public/style.css');
+
 // console.log(data.blog);
 
 var head = fs.readFileSync('./src/tpl/header.html').toString().replace('{{title}} - ', '');
