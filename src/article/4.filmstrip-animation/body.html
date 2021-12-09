@@ -1,0 +1,45 @@
+<style>
+  .animation {
+    width: 1500%;
+    /* 100% * num steps */
+    height: 100%;
+    background-image: url("img/spritesheet2.png");
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
+    animation-name: image-sprite;
+    animation-duration: 1.3s;
+    animation-timing-function: steps(14);
+    /* total steps -1 */
+    animation-iteration-count: infinite;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .animation__wrapper {
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+  }
+
+  @keyframes image-sprite {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-93.3333333333333%);
+      /* 14/15 steps * 100 */
+    }
+  }
+
+  /* https://www.sitepoint.com/frame-by-frame-animation-css-javascript/ */
+</style>
+
+
+<div class="animation__wrapper">
+  <div class="animation"></div>
+</div>
