@@ -6,14 +6,17 @@
     background-image: url("/article/4.filmstrip-animation/img/spritesheet2.png");
     background-size: 100%, 100%;
     background-repeat: no-repeat;
-    animation-name: image-sprite;
-    animation-duration: 1.3s;
-    animation-timing-function: steps(14);
-    /* total steps -1 */
-    animation-iteration-count: infinite;
     position: absolute;
     left: 0;
     top: 0;
+  }
+
+  .animation:hover {
+    animation-name: image-sprite;
+    animation-duration: 1.3s;
+    animation-timing-function: steps(14);
+    animation-iteration-count: infinite;
+    /* total steps -1 */
   }
 
   .animation__wrapper {
@@ -45,4 +48,4 @@
   <div class="animation"></div>
 </div>
 
-<p>Animation based on a single sprite image</p>
+<p>Animation based on a single sprite image. Hover over image to play/stop animation.</p>
